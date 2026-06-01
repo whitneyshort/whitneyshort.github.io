@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Tutoring Services</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Tutoring-specific ── */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .service-card {
+      background: var(--navy);
+      border: 1px solid rgba(200,164,74,0.12);
+      border-radius: 6px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .service-card:hover {
+      border-color: rgba(200,164,74,0.3);
+      transform: translateY(-3px);
+    }
+    .service-card .s-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin: 0 0 0.5rem;
+    }
+    .service-card p { font-size: 0.88rem; color: var(--muted); margin: 0; }
+    .service-card ul {
+      text-align: left;
+      font-size: 0.88rem;
+      margin-top: 0.75rem;
+      padding-left: 1.2rem;
+      color: var(--muted);
+      line-height: 2;
+    }
+
+    /* Pricing */
+    .price-block {
+      background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
+      border: 1px solid rgba(200,164,74,0.25);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 1rem;
+      display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap;
+    }
+    .price-block .price-val {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .price-block .price-unit {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .price-block .price-note {
+      width: 100%;
+      font-size: 0.9rem;
+      color: var(--cream-dim);
+      margin-top: 0.5rem;
+    }
+    .price-tier {
+      background: var(--navy);
+      border: 1px solid rgba(200,164,74,0.1);
+      border-radius: 6px;
+      padding: 1.4rem 1.75rem;
+      margin-bottom: 0.75rem;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;
+    }
+    .price-tier h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin: 0 0 0.25rem;
+    }
+    .price-tier p { font-size: 0.88rem; color: var(--muted); margin: 0; }
+    .price-tier .price-tag {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .price-tier .price-tag small {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid rgba(200,164,74,0.08);
+    }
+    .faq-q {
+      width: 100%;
+      background: none; border: none;
+      padding: 1.1rem 0;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--cream);
+      cursor: pointer;
+      text-align: left;
+      gap: 1rem;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--gold-light); }
+    .faq-q .arrow { font-size: 0.75rem; color: var(--gold); transition: transform 0.25s; }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.75;
+      padding-bottom: 1rem;
+      display: none;
+    }
+    .faq-a.open { display: block; }
+
+    /* Highlight band */
+    .highlight-band {
+      background: rgba(200,164,74,0.06);
+      border: 1px solid rgba(200,164,74,0.15);
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--cream-dim);
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-name" href="index.html">Your <span>Name</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+      <li><a href="tutoring.html" class="active">Tutoring</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-hero">
+    <span class="label">Tutoring Services</span>
+    <h1>One-on-One<br><em>Instruction</em></h1>
+    <div class="hero-rule"></div>
+    <p class="lead">
+      Personalized physics and mathematics tutoring from a doctoral researcher. 
+      Whether you're working through an undergraduate course or preparing for graduate-level work, 
+      I can help you build lasting understanding.
+    </p>
+  </header>
+
+  <main>
+
+    <!-- Intro -->
+    <div class="highlight-band">
+      "My goal isn't to get you through the problem set — it's to make you the kind of student 
+      who no longer needs me."
+    </div>
+
+    <!-- Subjects -->
+    <section>
+      <h2>Subjects I Teach</h2>
+      <div class="service-grid">
+
+        <div class="service-card">
+          <span class="s-icon">⚛</span>
+          <h3>Quantum Mechanics</h3>
+          <ul>
+            <li>Intro quantum (wave functions, operators)</li>
+            <li>Intermediate quantum (perturbation theory, spin)</li>
+            <li>Advanced topics (many-body, open systems)</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <span class="s-icon">📐</span>
+          <h3>Classical Mechanics</h3>
+          <ul>
+            <li>Newtonian mechanics</li>
+            <li>Lagrangian &amp; Hamiltonian methods</li>
+            <li>Oscillations &amp; chaos</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <span class="s-icon">⚡</span>
+          <h3>Electromagnetism</h3>
+          <ul>
+            <li>Electrostatics &amp; magnetostatics</li>
+            <li>Maxwell's equations</li>
+            <li>Radiation &amp; waves</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <span class="s-icon">🌡</span>
+          <h3>Thermal &amp; Statistical Physics</h3>
+          <ul>
+            <li>Thermodynamics</li>
+            <li>Statistical mechanics</li>
+            <li>Kinetic theory</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <span class="s-icon">∫</span>
+          <h3>Mathematics</h3>
+          <ul>
+            <li>Calculus I–III</li>
+            <li>Linear algebra</li>
+            <li>Differential equations</li>
+            <li>Mathematical physics</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <span class="s-icon">🖥</span>
+          <h3>Computational Physics</h3>
+          <ul>
+            <li>Numerical methods</li>
+            <li>Scientific computing</li>
+            <li>Python / MATLAB / Maple</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- Who I Work With -->
+    <section>
+      <h2>Who I Work With</h2>
+      <p>
+        I work with undergraduate students at all levels — from introductory physics 
+        through upper-division coursework — as well as graduate students 
+        preparing for qualifying exams or working through advanced material.
+      </p>
+      <p>
+        I'm happy to work with students who are struggling, students who are doing well 
+        but want to go deeper, and non-traditional students returning to physics after a gap.
+      </p>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- Rates -->
+    <section>
+      <h2>Rates &amp; Packages</h2>
+
+      <div class="price-tier">
+        <div>
+          <h3>Standard Rate</h3>
+          <p>Individual sessions, no commitment required</p>
+        </div>
+        <div class="price-tag">$XX <small>/ hr</small></div>
+      </div>
+
+      <div class="price-tier">
+        <div>
+          <h3>Package — 5 Sessions</h3>
+          <p>Pre-purchased block; sessions don't expire</p>
+        </div>
+        <div class="price-tag">$XX <small>/ hr</small></div>
+      </div>
+
+      <div class="price-tier">
+        <div>
+          <h3>Sliding Scale</h3>
+          <p>Available for students with demonstrated financial need — please reach out</p>
+        </div>
+        <div class="price-tag" style="color:var(--steel-light);">Ask me</div>
+      </div>
+
+      <p style="margin-top:1rem; font-size:0.9rem; color:var(--muted);">
+        Sessions are typically 60 or 90 minutes. I meet over Zoom or, 
+        if you're local to [Your City], in person by arrangement.
+      </p>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- FAQ -->
+    <section>
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          How do sessions work?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          Sessions are typically over Zoom. Before our first meeting, 
+          I'll ask you to share your syllabus or the specific topics you're working on. 
+          We'll spend our time working through concepts, example problems, 
+          and building problem-solving strategies — not just getting answers.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Do you help with homework problems specifically?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          I'll guide you through how to approach problems and where you're getting stuck, 
+          but my focus is on understanding rather than giving you answers to copy. 
+          If you leave a session genuinely understanding the physics, 
+          you'll be able to handle the rest of the assignment yourself.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          How do I schedule a session?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          Send me an email with your course level, topics, and a few times you're available. 
+          I typically respond within 48 hours. 
+          First sessions are charged at the standard rate — no free trial, 
+          but there's no obligation to continue.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          What's your cancellation policy?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          Please give 24 hours notice to cancel or reschedule. 
+          Cancellations with less than 24 hours notice may be charged at half the session rate. 
+          I'll extend the same courtesy to you if I ever need to reschedule.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Do you offer test-prep or qualifying exam prep?
+          <span class="arrow">▾</span>
+        </button>
+        <div class="faq-a">
+          Yes — I'm particularly experienced helping students prepare for the physics GRE 
+          and graduate qualifying exams. 
+          For exam prep, I'll typically design a multi-week plan covering core topic areas.
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- CTA -->
+    <section>
+      <h2>Book a Session</h2>
+      <p>
+        Ready to get started, or have a question first? 
+        Email me with your course level, the topics you're working on, 
+        and a few times you're available.
+      </p>
+      <div class="btn-group">
+        <a href="mailto:you@university.edu?subject=Tutoring%20Inquiry" class="btn btn-gold">Email to Book</a>
+        <a href="teaching.html" class="btn btn-outline">View My Teaching</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Your Name</p>
+    <p>Built with GitHub Pages · <a href="mailto:you@university.edu">Contact</a></p>
+  </footer>
+
+  <script>
+    function toggleFAQ(btn) {
+      const answer = btn.nextElementSibling;
+      const isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-a.open').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-q.open').forEach(b => b.classList.remove('open'));
+      if (!isOpen) {
+        answer.classList.add('open');
+        btn.classList.add('open');
+      }
+    }
+  </script>
+</body>
+</html>

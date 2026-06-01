@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Research</title>
+  <meta name="description" content="Research and publications by [Your Name]." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .pub-card {
+      background: var(--navy);
+      border: 1px solid rgba(200,164,74,0.1);
+      border-radius: 5px;
+      padding: 1.4rem 1.75rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .pub-card:hover {
+      border-color: rgba(200,164,74,0.28);
+      transform: translateY(-2px);
+    }
+    .pub-card .pub-meta {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--steel-light);
+      margin-bottom: 0.45rem;
+    }
+    .pub-card .pub-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.3;
+      margin-bottom: 0.4rem;
+    }
+    .pub-card .pub-authors {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .pub-card .pub-authors strong { color: var(--cream-dim); }
+    .pub-card .pub-abstract {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-top: 0.6rem;
+      margin-bottom: 0.8rem;
+      display: none; /* toggle with JS */
+    }
+    .pub-card .pub-abstract.open { display: block; }
+    .pub-links { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; }
+    .pub-link {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      border: 1px solid rgba(74,128,168,0.3);
+      color: var(--steel-light);
+      transition: all 0.2s;
+    }
+    .pub-link:hover {
+      background: rgba(74,128,168,0.1);
+      border-color: var(--steel-light);
+      color: var(--cream);
+    }
+    .pub-link.primary {
+      border-color: rgba(200,164,74,0.3);
+      color: var(--gold);
+    }
+    .pub-link.primary:hover {
+      background: rgba(200,164,74,0.08);
+      border-color: var(--gold);
+    }
+    .abstract-toggle {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: none; border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 0.3rem 0;
+      transition: color 0.2s;
+    }
+    .abstract-toggle:hover { color: var(--cream); }
+
+    /* Project highlights */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .project-card {
+      background: var(--navy);
+      border: 1px solid rgba(74,128,168,0.15);
+      border-radius: 5px;
+      padding: 1.4rem;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .project-card:hover {
+      border-color: rgba(74,128,168,0.35);
+      transform: translateY(-2px);
+    }
+    .project-card .p-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.7rem;
+      display: block;
+    }
+    .project-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin: 0 0 0.5rem;
+    }
+    .project-card p { font-size: 0.88rem; color: var(--muted); margin: 0; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-name" href="index.html">Your <span>Name</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+      <li><a href="tutoring.html">Tutoring</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-hero">
+    <span class="label">Research & Publications</span>
+    <h1>Work &<br><em>Scholarship</em></h1>
+    <div class="hero-rule"></div>
+    <p class="lead">
+      A brief overview of your research program — what questions drive you, 
+      what methods you use, and what impact you hope to have.
+    </p>
+  </header>
+
+  <main>
+
+    <!-- Research Overview -->
+    <section>
+      <h2>Research Overview</h2>
+      <p>
+        Describe your overall research agenda in a few sentences. 
+        What is the big-picture problem you are working on? 
+        What makes your approach distinctive?
+      </p>
+      <p>
+        This is also a good place to mention collaborators, funding sources, 
+        or the broader scientific community your work speaks to.
+      </p>
+    </section>
+
+    <!-- Current Projects -->
+    <section>
+      <h2>Current Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <span class="p-icon">⚛</span>
+          <h3>Project Title One</h3>
+          <p>Brief description of this research thread — what question you're addressing and what approach you're taking.</p>
+          <div class="tags" style="margin-top:0.8rem;">
+            <span class="tag">Quantum Chemistry</span>
+            <span class="tag">Computation</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <span class="p-icon">🌊</span>
+          <h3>Project Title Two</h3>
+          <p>Brief description of a second research thread. A sentence or two is plenty for the overview card.</p>
+          <div class="tags" style="margin-top:0.8rem;">
+            <span class="tag">Open Systems</span>
+            <span class="tag">Theory</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <span class="p-icon">📐</span>
+          <h3>Project Title Three</h3>
+          <p>Brief description of a third project area. Duplicate or remove cards as needed.</p>
+          <div class="tags" style="margin-top:0.8rem;">
+            <span class="tag">Quantum Optics</span>
+            <span class="tag">Experiment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- Publications -->
+    <section>
+      <h2>Publications</h2>
+
+      <!-- Preprints -->
+      <h3>Preprints</h3>
+
+      <div class="pub-card">
+        <div class="pub-meta">2025 · Preprint · arXiv</div>
+        <div class="pub-title">Title of Your Preprint Paper</div>
+        <div class="pub-authors"><strong>Your Name</strong>, Co-Author One, Co-Author Two</div>
+        <div class="pub-links">
+          <a href="#" class="pub-link primary">arXiv</a>
+          <a href="#" class="pub-link">PDF</a>
+          <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+        </div>
+        <div class="pub-abstract">
+          Paste your abstract here. Give readers a clear sense of the paper's contributions, 
+          methods, and significance.
+        </div>
+      </div>
+
+      <!-- Published Papers -->
+      <h3>Peer-Reviewed Articles</h3>
+
+      <div class="pub-card">
+        <div class="pub-meta">2024 · Journal of Your Field · Vol. XX, pp. XX–XX</div>
+        <div class="pub-title">Title of Your Published Paper</div>
+        <div class="pub-authors"><strong>Your Name</strong>, Co-Author One</div>
+        <div class="pub-links">
+          <a href="#" class="pub-link primary">DOI</a>
+          <a href="#" class="pub-link">PDF</a>
+          <a href="#" class="pub-link">arXiv</a>
+          <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+        </div>
+        <div class="pub-abstract">
+          Paste your abstract here. Duplicate this card for each published paper.
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-meta">2023 · Another Journal · Vol. YY, pp. YY–YY</div>
+        <div class="pub-title">Title of an Earlier Published Paper</div>
+        <div class="pub-authors"><strong>Your Name</strong>, Co-Author A, Co-Author B</div>
+        <div class="pub-links">
+          <a href="#" class="pub-link primary">DOI</a>
+          <a href="#" class="pub-link">PDF</a>
+          <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+        </div>
+        <div class="pub-abstract">
+          Paste your abstract here.
+        </div>
+      </div>
+
+      <!-- In Preparation -->
+      <h3>In Preparation</h3>
+      <div class="pub-card">
+        <div class="pub-meta">In Preparation · 2025</div>
+        <div class="pub-title">Working Title of Paper in Progress</div>
+        <div class="pub-authors"><strong>Your Name</strong>, Collaborator Name</div>
+        <div class="pub-links">
+          <span style="font-family:var(--font-mono);font-size:0.68rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;">Coming soon</span>
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- Talks & Presentations -->
+    <section>
+      <h2>Talks &amp; Presentations</h2>
+      <div class="info-row">
+        <span class="year">2025</span>
+        <span class="detail"><strong>Conference Name</strong> — "Talk Title," Location.</span>
+      </div>
+      <div class="info-row">
+        <span class="year">2025</span>
+        <span class="detail"><strong>Department Seminar</strong> — "Seminar Title," University Name.</span>
+      </div>
+      <div class="info-row">
+        <span class="year">2024</span>
+        <span class="detail"><strong>Workshop Name</strong> — "Poster/Talk Title," Location.</span>
+      </div>
+    </section>
+
+    <div class="btn-group">
+      <a href="cv.html" class="btn btn-gold">View Full CV</a>
+      <a href="https://scholar.google.com" target="_blank" rel="noopener" class="btn btn-outline">Google Scholar</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Your Name</p>
+    <p>Built with GitHub Pages · <a href="mailto:you@university.edu">Contact</a></p>
+  </footer>
+
+  <script>
+    function toggleAbstract(btn) {
+      const abstract = btn.closest('.pub-card').querySelector('.pub-abstract');
+      abstract.classList.toggle('open');
+      btn.textContent = abstract.classList.contains('open') ? 'Abstract ▴' : 'Abstract ▾';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Teaching</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .course-card {
+      background: var(--navy);
+      border: 1px solid rgba(200,164,74,0.1);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 5px 5px 0;
+      padding: 1.3rem 1.6rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .course-card:hover {
+      border-color: rgba(200,164,74,0.3);
+      border-left-color: var(--gold-light);
+      transform: translateX(3px);
+    }
+    .course-card .c-meta {
+      font-family: var(--font-mono);
+      font-size: 0.67rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--steel-light);
+      margin-bottom: 0.35rem;
+    }
+    .course-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin: 0 0 0.35rem;
+    }
+    .course-card p { font-size: 0.9rem; color: var(--muted); margin: 0; }
+    .course-role {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      margin-top: 0.6rem;
+    }
+    .role-ta { background: rgba(74,128,168,0.15); color: var(--steel-light); }
+    .role-instructor { background: rgba(200,164,74,0.1); color: var(--gold); }
+    .role-guest { background: rgba(200,164,74,0.06); color: var(--muted); }
+
+    .philosophy-quote {
+      border-left: 3px solid rgba(200,164,74,0.3);
+      padding: 0.8rem 1.4rem;
+      margin: 1.5rem 0;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--cream-dim);
+      line-height: 1.7;
+    }
+    .philosophy-quote cite {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-style: normal;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-name" href="index.html">Your <span>Name</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html" class="active">Teaching</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+      <li><a href="tutoring.html">Tutoring</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-hero">
+    <span class="label">Teaching</span>
+    <h1>Education &<br><em>Mentorship</em></h1>
+    <div class="hero-rule"></div>
+    <p class="lead">
+      I believe good teaching is about meeting students where they are, 
+      building intuition before formalism, and making them feel capable of difficult things.
+    </p>
+  </header>
+
+  <main>
+
+    <!-- Teaching Philosophy -->
+    <section>
+      <h2>Teaching Philosophy</h2>
+      <p>
+        Share your approach to teaching here — what values guide how you engage with students, 
+        how you design learning experiences, and what you're still learning as an educator.
+      </p>
+
+      <div class="philosophy-quote">
+        "A quote that captures your teaching values — your own words, 
+        or a guiding idea from a mentor or philosopher of education."
+        <cite>— Attribution if applicable</cite>
+      </div>
+
+      <p>
+        Continue with another paragraph about your specific pedagogical strategies — 
+        e.g., active learning, inclusive pedagogy, accessibility, inquiry-based approaches, 
+        problem-solving, or connecting course material to real-world contexts.
+      </p>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- Courses -->
+    <section>
+      <h2>Courses Taught &amp; Assisted</h2>
+
+      <h3>As Instructor of Record</h3>
+      <div class="course-card">
+        <div class="c-meta">Fall 2024 · University Name</div>
+        <h3>PHYS XXX — Course Title</h3>
+        <p>Brief description of the course: level, enrollment, main topics covered. One or two sentences.</p>
+        <span class="course-role role-instructor">Instructor of Record</span>
+      </div>
+
+      <h3>As Teaching Assistant</h3>
+      <div class="course-card">
+        <div class="c-meta">Spring 2025 · University Name</div>
+        <h3>PHYS XXX — Quantum Mechanics I</h3>
+        <p>Responsibilities: leading weekly discussion sections, holding office hours, grading problem sets and exams.</p>
+        <span class="course-role role-ta">Teaching Assistant</span>
+      </div>
+
+      <div class="course-card">
+        <div class="c-meta">Fall 2024 · University Name</div>
+        <h3>PHYS XXX — Classical Mechanics</h3>
+        <p>Responsibilities: recitation sections, exam review sessions, grading.</p>
+        <span class="course-role role-ta">Teaching Assistant</span>
+      </div>
+
+      <div class="course-card">
+        <div class="c-meta">Spring 2024 · University Name</div>
+        <h3>PHYS XXX — Electromagnetism</h3>
+        <p>Add description of your responsibilities and what you enjoyed about this course.</p>
+        <span class="course-role role-ta">Teaching Assistant</span>
+      </div>
+
+      <h3>Guest Lectures</h3>
+      <div class="course-card">
+        <div class="c-meta">2024 · Course Name</div>
+        <h3>Guest Lecture — "Lecture Topic"</h3>
+        <p>Brief note about the talk and audience.</p>
+        <span class="course-role role-guest">Guest Lecturer</span>
+      </div>
+
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- Mentorship -->
+    <section>
+      <h2>Mentorship</h2>
+      <p>
+        List any undergraduate or junior students you've mentored, advised on research projects, 
+        or helped with graduate school applications. 
+        This is optional but highlights your investment in students beyond the classroom.
+      </p>
+
+      <div class="info-row">
+        <span class="year">2024–25</span>
+        <span class="detail"><strong>Student Name</strong> — Undergraduate research project on [topic].</span>
+      </div>
+      <div class="info-row">
+        <span class="year">2024</span>
+        <span class="detail"><strong>Student Name</strong> — Senior thesis support and graduate school advising.</span>
+      </div>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- Materials & Resources -->
+    <section>
+      <h2>Teaching Materials</h2>
+      <p>
+        If you make notes, problem sets, or other materials publicly available, link them here. 
+        Alternatively, use this section to describe your approach to course design or 
+        share materials on request.
+      </p>
+      <div class="card" style="margin-top:1rem;">
+        <span class="card-meta">Notes / Resource</span>
+        <h3>Resource Title</h3>
+        <p>Brief description. Link to GitHub, personal drive, or just note "available on request."</p>
+      </div>
+    </section>
+
+    <div class="btn-group">
+      <a href="tutoring.html" class="btn btn-gold">Tutoring Services</a>
+      <a href="mailto:you@university.edu" class="btn btn-outline">Contact Me</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Your Name</p>
+    <p>Built with GitHub Pages · <a href="mailto:you@university.edu">Contact</a></p>
+  </footer>
+
+</body>
+</html>
