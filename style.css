@@ -1,0 +1,339 @@
+/* ============================================================
+   PERSONAL ACADEMIC SITE — Shared Stylesheet
+   Aesthetic: Refined academic on warm cream
+   Palette: Cream / warm dark brown / amber gold / steel blue
+   Fonts: Cormorant Garamond + Source Serif 4 + JetBrains Mono
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Source+Serif+4:wght@300;400;600&family=JetBrains+Mono:wght@300;400&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --bg:         #f5efe3;
+  --bg-card:    #ede4d5;
+  --bg-card2:   #e5dace;
+  --text:       #1e1a14;
+  --text-dim:   #3a3228;
+  --muted:      #7a6e60;
+  --gold:       #8a6818;
+  --gold-light: #a07c28;
+  --steel:      #2a5f80;
+  --steel-light:#3a7898;
+  --border:     rgba(138, 104, 24, 0.18);
+  --border-mid: rgba(138, 104, 24, 0.28);
+  --white:      #faf6ef;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Source Serif 4', Georgia, serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+  --nav-h: 68px;
+  --page-max: 860px;
+  --section-gap: 4rem;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 17px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.75;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Remove all italics globally ── */
+em, i { font-style: normal; color: inherit; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--bg-card2); border-radius: 3px; }
+
+/* ── Selection ── */
+::selection { background: var(--gold); color: var(--white); }
+
+/* ── Navigation ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: var(--nav-h);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem;
+  background: rgba(245, 239, 227, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.3s;
+}
+nav .nav-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+nav .nav-name span { color: var(--text); }
+nav ul {
+  display: flex; gap: 0.25rem;
+  list-style: none;
+  align-items: center;
+}
+nav ul a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.5rem 0.85rem;
+  border-radius: 3px;
+  transition: color 0.2s, background 0.2s;
+}
+nav ul a:hover, nav ul a.active {
+  color: var(--gold-light);
+  background: rgba(138,104,24,0.07);
+}
+nav ul a.active { color: var(--gold); }
+
+/* ── Page Hero ── */
+.page-hero {
+  padding-top: calc(var(--nav-h) + 5rem);
+  padding-bottom: 3.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  animation: fadeUp 0.7s ease both;
+}
+.page-hero .label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 1rem;
+}
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+.page-hero .lead {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 600px;
+  line-height: 1.8;
+}
+.hero-rule {
+  width: 60px; height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 2rem 0;
+}
+
+/* ── Main Content ── */
+main {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 3rem var(--section-gap);
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+
+/* ── Sections ── */
+section { margin-bottom: 3.5rem; }
+section h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+section h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  margin-top: 1.6rem;
+}
+section p { margin-bottom: 0.9rem; color: var(--text-dim); }
+section ul {
+  padding-left: 1.2rem;
+  color: var(--text-dim);
+  line-height: 2;
+}
+section ul li { margin-bottom: 0.25rem; }
+
+/* ── Cards ── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.1rem;
+  transition: border-color 0.25s, transform 0.2s;
+}
+.card:hover {
+  border-color: var(--border-mid);
+  transform: translateY(-2px);
+}
+.card .card-meta {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--steel-light);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.5rem;
+}
+.card p { font-size: 0.92rem; color: var(--muted); margin: 0; }
+
+/* ── Buttons & Links ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+.btn-gold {
+  background: var(--gold);
+  color: var(--white);
+  border: 1px solid var(--gold);
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--border-mid);
+}
+.btn-outline:hover {
+  background: rgba(138,104,24,0.07);
+  border-color: var(--gold);
+}
+.btn-group { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+
+/* ── Tag pills ── */
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--steel);
+  background: rgba(42,95,128,0.08);
+  border: 1px solid rgba(42,95,128,0.18);
+  border-radius: 2px;
+  padding: 0.2rem 0.6rem;
+}
+
+/* ── Divider ── */
+hr.section-rule {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 3rem;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  max-width: var(--page-max);
+  margin: 0 auto;
+}
+footer p {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+footer a { color: var(--gold); text-decoration: none; }
+footer a:hover { color: var(--gold-light); }
+
+/* ── Subtle warm texture in background ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 10%, rgba(42,95,128,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 80%, rgba(138,104,24,0.04) 0%, transparent 60%),
+    var(--bg);
+  pointer-events: none;
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Info list (CV-style) ── */
+.info-row {
+  display: flex; gap: 1.5rem;
+  border-bottom: 1px solid rgba(138,104,24,0.08);
+  padding: 0.9rem 0;
+  align-items: baseline;
+}
+.info-row .year {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--gold);
+  min-width: 90px;
+  letter-spacing: 0.05em;
+}
+.info-row .detail { color: var(--text-dim); font-size: 0.95rem; }
+.info-row .detail strong { color: var(--text); font-weight: 600; }
+
+/* ── Hamburger (mobile) ── */
+.nav-toggle { display: none; }
+
+/* ── Mobile ── */
+@media (max-width: 680px) {
+  nav { padding: 0 1.5rem; }
+  .page-hero, main { padding-left: 1.5rem; padding-right: 1.5rem; }
+  footer { padding: 1.5rem; }
+  nav ul { display: none; }
+  nav ul.open {
+    display: flex; flex-direction: column; gap: 0;
+    position: absolute; top: var(--nav-h); left: 0; right: 0;
+    background: rgba(245,239,227,0.98);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 0 1rem;
+  }
+  .nav-toggle {
+    display: flex; flex-direction: column; gap: 5px; cursor: pointer;
+    background: none; border: none; padding: 4px;
+  }
+  .nav-toggle span {
+    display: block; width: 22px; height: 1.5px;
+    background: var(--text); border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .info-row { flex-direction: column; gap: 0.25rem; }
+  .info-row .year { min-width: auto; }
+  .btn-group { flex-direction: column; }
+}
