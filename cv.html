@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — CV</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* CV section styling */
+    .cv-section { margin-bottom: 2.8rem; }
+    .cv-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(200,164,74,0.2);
+    }
+    .cv-entry {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1.25rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(200,164,74,0.05);
+    }
+    .cv-entry:last-child { border-bottom: none; }
+    .cv-year {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      padding-top: 0.15rem;
+    }
+    .cv-detail strong {
+      display: block;
+      color: var(--text);
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+    .cv-detail .cv-inst {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--steel-light);
+      margin-bottom: 0.25rem;
+    }
+    .cv-detail p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    /* PDF embed */
+    .pdf-wrapper {
+      background: var(--bg-card);
+      border: 1px solid rgba(200,164,74,0.15);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+    }
+    .pdf-wrapper iframe {
+      width: 100%;
+      height: 700px;
+      display: block;
+      border: none;
+    }
+    .pdf-fallback {
+      padding: 3rem;
+      text-align: center;
+    }
+    .pdf-fallback p { color: var(--muted); margin-bottom: 1rem; }
+
+    @media (max-width: 680px) {
+      .cv-entry { grid-template-columns: 1fr; gap: 0.2rem; }
+      .cv-year { padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-name" href="index.html">Your <span>Name</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+      <li><a href="tutoring.html">Tutoring</a></li>
+      <li><a href="cv.html" class="active">CV</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-hero">
+    <span class="label">Curriculum Vitae</span>
+    <h1>Academic<br><em>Record</em></h1>
+    <div class="hero-rule"></div>
+    <p class="lead">
+      A summary of my education, research, teaching, and service. 
+      Download the full PDF below for the most up-to-date version.
+    </p>
+  </header>
+
+  <main>
+
+    <!-- Download CTA -->
+    <div class="btn-group" style="margin-bottom:2.5rem;">
+      <a href="cv.pdf" download class="btn btn-gold">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+      </a>
+      <a href="cv.pdf" target="_blank" class="btn btn-outline">Open in New Tab</a>
+    </div>
+
+    <!-- PDF Embed -->
+    <section>
+      <h2>Full CV</h2>
+      <div class="pdf-wrapper">
+        <!-- Replace cv.pdf with the actual filename you upload to your repo -->
+        <iframe
+          src="cv.pdf"
+          title="Curriculum Vitae"
+          onerror="this.style.display='none'; document.getElementById('pdf-fallback').style.display='block';"
+        ></iframe>
+        <div id="pdf-fallback" class="pdf-fallback" style="display:none;">
+          <p>PDF preview not available in this browser.</p>
+          <a href="cv.pdf" download class="btn btn-gold">Download CV</a>
+        </div>
+      </div>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:0.75rem;font-family:var(--font-mono);letter-spacing:0.05em;">
+        To embed your CV: upload your PDF file as <code style="color:var(--gold);">cv.pdf</code> in the root of your GitHub Pages repository.
+      </p>
+    </section>
+
+    <hr class="section-rule">
+
+    <!-- Abbreviated CV below for accessibility / SEO -->
+    <div class="cv-section">
+      <h2>Education</h2>
+      <div class="cv-entry">
+        <div class="cv-year">2022–present</div>
+        <div class="cv-detail">
+          <strong>Ph.D. in Physics</strong>
+          <div class="cv-inst">University Name · Advisor: Prof. Name</div>
+          <p>Thesis: "Working title of your dissertation"</p>
+        </div>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-year">2018–2022</div>
+        <div class="cv-detail">
+          <strong>B.S. in Physics (with Honors)</strong>
+          <div class="cv-inst">Undergraduate University</div>
+          <p>Minor in Mathematics. Thesis: "Undergraduate thesis title."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h2>Research Positions</h2>
+      <div class="cv-entry">
+        <div class="cv-year">2022–present</div>
+        <div class="cv-detail">
+          <strong>Graduate Research Assistant</strong>
+          <div class="cv-inst">Lab / Group Name · University</div>
+          <p>Brief description of your research responsibilities and focus areas.</p>
+        </div>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-year">Summer 2021</div>
+        <div class="cv-detail">
+          <strong>REU / Internship / Research Fellowship</strong>
+          <div class="cv-inst">Institution Name</div>
+          <p>Brief description.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h2>Teaching</h2>
+      <div class="cv-entry">
+        <div class="cv-year">Spring 2025</div>
+        <div class="cv-detail">
+          <strong>Teaching Assistant — Quantum Mechanics I</strong>
+          <div class="cv-inst">University Name</div>
+        </div>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-year">Fall 2024</div>
+        <div class="cv-detail">
+          <strong>Teaching Assistant — Classical Mechanics</strong>
+          <div class="cv-inst">University Name</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h2>Publications</h2>
+      <div class="cv-entry">
+        <div class="cv-year">2025</div>
+        <div class="cv-detail">
+          <strong>Title of Preprint / Paper</strong>
+          <p><em>Your Name</em>, Co-Author. arXiv:XXXX.XXXXX.</p>
+        </div>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-year">2024</div>
+        <div class="cv-detail">
+          <strong>Title of Published Paper</strong>
+          <p><em>Your Name</em>, Co-Author. <em>Journal Name</em>, Vol. X (Year).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h2>Honors &amp; Awards</h2>
+      <div class="cv-entry">
+        <div class="cv-year">2024</div>
+        <div class="cv-detail">
+          <strong>Award or Fellowship Name</strong>
+          <div class="cv-inst">Granting Institution</div>
+        </div>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-year">2022</div>
+        <div class="cv-detail">
+          <strong>Another Award</strong>
+          <div class="cv-inst">Granting Institution</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h2>Skills &amp; Tools</h2>
+      <div class="tags" style="margin-top:0.5rem;">
+        <span class="tag">Python</span>
+        <span class="tag">MATLAB</span>
+        <span class="tag">Maple</span>
+        <span class="tag">Mathematica</span>
+        <span class="tag">LaTeX</span>
+        <span class="tag">Git</span>
+        <span class="tag">C / C++</span>
+        <span class="tag">Julia</span>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Your Name</p>
+    <p>Built with GitHub Pages · <a href="mailto:you@university.edu">Contact</a></p>
+  </footer>
+
+</body>
+</html>
