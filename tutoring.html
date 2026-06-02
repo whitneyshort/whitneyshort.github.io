@@ -3,226 +3,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Whitney Short — College Essays and Tutoring Services</title>
+  <title>Whitney Short — Tutoring & College Essays</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── Tutoring-specific ── */
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
       margin-top: 1rem;
     }
     .service-card {
       background: var(--bg-card);
-      border: 1px solid rgba(200,164,74,0.12);
-      border-radius: 6px;
-      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
       text-align: center;
-      transition: border-color 0.25s, transform 0.2s;
-    }
-    .service-card:hover {
-      border-color: rgba(200,164,74,0.3);
-      transform: translateY(-3px);
     }
     .service-card .s-icon {
-      font-size: 2rem;
+      font-size: 1.6rem;
       display: block;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
     .service-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--text);
-      margin: 0 0 0.5rem;
+      margin: 0;
     }
-    .service-card p { font-size: 0.88rem; color: var(--muted); margin: 0; }
     .service-card ul {
       text-align: left;
       font-size: 0.88rem;
-      margin-top: 0.75rem;
-      padding-left: 1.2rem;
+      margin-top: 0.6rem;
+      padding-left: 1.1rem;
       color: var(--muted);
-      line-height: 2;
+      line-height: 1.9;
     }
 
-    /* Pricing */
-    .price-block {
-      background: var(--bg-card);
-      border: 1px solid rgba(200,164,74,0.25);
-      border-radius: 8px;
-      padding: 2rem;
-      margin-bottom: 1rem;
-      display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap;
-    }
-    .price-block .price-val {
-      font-family: var(--font-display);
-      font-size: 2.8rem;
-      font-weight: 300;
-      color: var(--gold);
-      line-height: 1;
-    }
-    .price-block .price-unit {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .price-block .price-note {
-      width: 100%;
-      font-size: 0.9rem;
-      color: var(--text-dim);
-      margin-top: 0.5rem;
-    }
     .price-tier {
       background: var(--bg-card);
-      border: 1px solid rgba(200,164,74,0.1);
-      border-radius: 6px;
-      padding: 1.4rem 1.75rem;
-      margin-bottom: 0.75rem;
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 0.6rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 0.75rem;
     }
     .price-tier h3 {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--text);
-      margin: 0 0 0.25rem;
+      margin: 0 0 0.2rem;
     }
-    .price-tier p { font-size: 0.88rem; color: var(--muted); margin: 0; }
+    .price-tier p { font-size: 0.85rem; color: var(--muted); margin: 0; }
     .price-tier .price-tag {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 300;
-      color: var(--gold);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--navy);
       white-space: nowrap;
     }
     .price-tier .price-tag small {
       font-family: var(--font-mono);
       font-size: 0.65rem;
       color: var(--muted);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-weight: 400;
     }
 
-    /* FAQ */
     .faq-item {
-      border-bottom: 1px solid rgba(200,164,74,0.08);
+      border-bottom: 1px solid var(--border);
     }
     .faq-q {
       width: 100%;
       background: none; border: none;
-      padding: 1.1rem 0;
+      padding: 0.9rem 0;
       display: flex; justify-content: space-between; align-items: center;
-      font-family: var(--font-display);
-      font-size: 1.05rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--text);
       cursor: pointer;
       text-align: left;
       gap: 1rem;
-      transition: color 0.2s;
+      transition: color 0.15s;
     }
-    .faq-q:hover { color: var(--gold-light); }
-    .faq-q .arrow { font-size: 0.75rem; color: var(--gold); transition: transform 0.25s; }
+    .faq-q:hover { color: var(--navy); }
+    .faq-q .arrow { font-size: 0.7rem; color: var(--navy); transition: transform 0.2s; }
     .faq-q.open .arrow { transform: rotate(180deg); }
     .faq-a {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--muted);
       line-height: 1.75;
-      padding-bottom: 1rem;
+      padding-bottom: 0.9rem;
       display: none;
     }
     .faq-a.open { display: block; }
-
-    /* Highlight band */
-    .highlight-band {
-      background: rgba(200,164,74,0.06);
-      border: 1px solid rgba(200,164,74,0.15);
-      border-radius: 6px;
-      padding: 1.25rem 1.5rem;
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      
-      color: var(--text-dim);
-      margin: 1.5rem 0;
-    }
   </style>
 </head>
 <body>
 
   <nav>
-    <a class="nav-name" href="index.html">Whitney <span>Short</span></a>
+    <a class="nav-name" href="index.html">Whitney Short</a>
     <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
     <ul>
       <li><a href="index.html">About</a></li>
-      <li><a href="tutoring.html" class="active">Tutoring and College Essays</a></li>
+      <li><a href="tutoring.html" class="active">Tutoring & College Essays</a></li>
       <li><a href="cv.html">CV</a></li>
     </ul>
   </nav>
 
-  <header class="page-hero">
-    <span class="label">Tutoring Services</span>
-    <h2>One-on-One Tutoring </h1>
-    <div class="hero-rule"></div>
-    <p class="lead">
-      Personalized chemistry tutoring at the high school and college level. 
-    </p>
-  </header>
+  <main style="padding-top: calc(var(--nav-h) + 3rem);">
 
-  <main>
-
-    <!-- Subjects -->
+    <!-- Tutoring Section -->
     <section>
-      <h2>Subjects I Teach</h2>
+      <h2>One-on-One Tutoring</h2>
+      <p>
+        I provide individualized tutoring in high school chemistry and college general chemistry.
+        I have received the Nathan Sugarman Teaching Award in General Chemistry for my skills in
+        teaching general chemistry at the first-year, college level and have undergone professional
+        development and advanced pedagogical study of effective teaching through UChicago's CCTL.
+      </p>
       <div class="service-grid">
-
         <div class="service-card">
           <span class="s-icon">⚛</span>
           <h3>High School Chemistry</h3>
         </div>
-
         <div class="service-card">
           <span class="s-icon">🌡</span>
           <h3>College General Chemistry</h3>
         </div>
-
       </div>
     </section>
 
     <hr class="section-rule">
-<!-- College Essay Section -->
-<section>
-  <h2>College Essay Editing &amp; Guidance</h2>
-  <p>
-    Throughout my degree in English Literature, I took several advanced grammar and style courses which have given me the skills to
-    aid in college essay refinement at the clause, sentence, and paragraph level. I can help you hone your own personal voice and also
-    provide guidance in content and structure to help convey as much as possible about you to the reader in the limited word and character
-    counts allotted. 
-  </p>
-  <p>
-    I work with high school students on the Common App personal statement, supplemental essays, and scholarship essays. 
-    Especially in the era of AI-aided writing, I will help you craft your individual voice and style, without sacrificing the 
-    important task of communicating who you are and strive to become. College essays are a unique genre of writing where a little cheesiness
-    can be more than welcome. I believe in employing playfulness, creative sentence structure, 
-    and literary devices within my writing, without sacrificing the rigor or depth of the content of the essay. 
-    For supplemental essays, we will include specific details about schools to show you did your homework that are tailored to the
-    story you're telling across all your materials. We will ensure that we use each component to reinforce broader themes, while still
-    introducing new pieces of information about yourself to tell the admissions committee a coherent, strong story.
-  </p>
 
-  <h3>Essays I Can Help With</h3>
-  <ul>
-    <li>Common App personal statement (650 words)</li>
-    <li>Why School / Why Major supplementals</li>
-    <li>Extracurricular and activity essays</li>
-    <li>Scholarship essays</li>
-  </ul>
-</section>
+    <!-- College Essay Section -->
+    <section>
+      <h2>College Essay Editing &amp; Guidance</h2>
+      <p>
+        Throughout my degree in English Literature, I took several advanced grammar and style courses
+        which have given me the skills to aid in college essay refinement at the clause, sentence, and
+        paragraph level. I can help you hone your own personal voice and also provide guidance in content
+        and structure to help convey as much as possible about you to the reader in the limited word and
+        character counts allotted.
+      </p>
+      <p>
+        I work with high school students on the Common App personal statement, supplemental essays, and
+        scholarship essays. Especially in the era of AI-aided writing, I will help you craft your individual
+        voice and style, without sacrificing the important task of communicating who you are and strive to
+        become. College essays are a unique genre of writing where a little cheesiness can be more than
+        welcome. I believe in employing playfulness, creative sentence structure, and literary devices
+        within my writing, without sacrificing the rigor or depth of the content of the essay. For
+        supplemental essays, we will include specific details about schools to show you did your homework,
+        tailored to the story you're telling across all your materials. We will ensure that we use each
+        component to reinforce broader themes, while still introducing new pieces of information about
+        yourself to tell the admissions committee a coherent, strong story.
+      </p>
+
+      <h3>Essays I Can Help With</h3>
+      <ul>
+        <li>Common App personal statement (650 words)</li>
+        <li>Why School / Why Major supplementals</li>
+        <li>Extracurricular and activity essays</li>
+        <li>Scholarship essays</li>
+      </ul>
+    </section>
 
     <hr class="section-rule">
 
@@ -232,7 +177,7 @@
 
       <div class="price-tier">
         <div>
-          <h3>College Essays and Tutoring Standard Rate</h3>
+          <h3>College Essays and Tutoring — Standard Rate</h3>
           <p>Individual face-to-face sessions, no commitment required</p>
         </div>
         <div class="price-tag">$50 <small>/ hr</small></div>
@@ -241,23 +186,24 @@
       <div class="price-tier">
         <div>
           <h3>Asynchronous Essay Editing</h3>
-          <p>Available with or without meeting with me in a face-to-face setting. 
-            Thorough commentary will typically take about 300-600 words/hr depending on the stage of the essay. (24-72 hr turnaround.) </p>
+          <p>Available with or without a face-to-face session. Thorough commentary typically covers
+            300–600 words/hr depending on the stage of the essay. (24–72 hr turnaround.)</p>
         </div>
         <div class="price-tag">$30 <small>/ hr</small></div>
       </div>
 
       <div class="price-tier">
         <div>
-          <h3>Pay-what-you-can Sliding Scale</h3>
-          <p>Please reach out if you cannot afford the above rates! I am happy to provide editing and tutoring services at a reduced or no cost.</p>
+          <h3>Pay-What-You-Can Sliding Scale</h3>
+          <p>Please reach out if you cannot afford the above rates — I am happy to provide services
+            at a reduced or no cost.</p>
         </div>
-        <div class="price-tag" style="color:var(--steel-light);">Ask me</div>
+        <div class="price-tag" style="color:var(--muted);font-size:1rem;">Ask me</div>
       </div>
 
-      <p style="margin-top:1rem; font-size:0.9rem; color:var(--muted);">
-        Sessions can range anywhere from 30 to 120 minutes. I prefer to meet in person and am located in Hyde Park, Chicago. 
-        I can certainly arrange virtual meetings if needed.
+      <p style="margin-top:1rem; font-size:0.88rem; color:var(--muted);">
+        Sessions can range from 30 to 120 minutes. I prefer to meet in person and am located in
+        Hyde Park, Chicago. Virtual meetings can certainly be arranged.
       </p>
     </section>
 
@@ -267,16 +213,15 @@
     <section>
       <h2>Frequently Asked Questions</h2>
 
-
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFAQ(this)">
           How do I schedule a session?
           <span class="arrow">▾</span>
         </button>
         <div class="faq-a">
-          Send me an email with your course level, topics, and a few times you're available if you're interested in tutoring. 
-          Similarly, tell me about what types of essays you'd like support with and your availablility for college essay editing.
-          I typically respond within 48 hours. 
+          Send me an email with your course level, topics, and a few times you're available if
+          you're interested in tutoring. Similarly, tell me about what types of essays you'd like
+          support with and your availability for college essay editing. I typically respond within 48 hours.
         </div>
       </div>
 
@@ -286,9 +231,9 @@
           <span class="arrow">▾</span>
         </button>
         <div class="faq-a">
-          Please give 24 hours notice to cancel or reschedule. 
-          Cancellations with less than 24 hours notice may be charged at half the session rate. 
-          If I ever need to cancel/reschedule with less than 24 hours notice, you will receive a 50% credit for the rescheduled session.
+          Please give 24 hours notice to cancel or reschedule. Cancellations with less than 24 hours
+          notice may be charged at half the session rate. If I ever need to cancel or reschedule with
+          less than 24 hours notice, you will receive a 50% credit toward the rescheduled session.
         </div>
       </div>
 
@@ -300,12 +245,11 @@
     <section>
       <h2>Book a Session</h2>
       <p>
-        Send me an email! Let me know which services you're interested in, as well as what you want to focus on. Provide some general
-        availability if possible.
+        Send me an email — let me know which services you're interested in, what you want to focus on,
+        and some general availability.
       </p>
       <div class="btn-group">
         <a href="mailto:wshort@uchicago.edu?subject=Tutoring%20Inquiry" class="btn btn-gold">Email to Book</a>
-        <a href="teaching.html" class="btn btn-outline">View My Teaching</a>
       </div>
     </section>
 
@@ -313,7 +257,7 @@
 
   <footer>
     <p>© 2026 Whitney Short</p>
-    <p>Built with GitHub Pages · <a href="mailto:wshort@uchicago.edu">Contact</a></p>
+    <p><a href="mailto:wshort@uchicago.edu">wshort@uchicago.edu</a></p>
   </footer>
 
   <script>
