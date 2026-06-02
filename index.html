@@ -3,98 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Whitney Short — About</title>
-  <meta name="description" content="Personal academic website of Whitney Short, quantum chemistry, tutoring, and college essay support." />
+  <title>Whitney Short</title>
+  <meta name="description" content="Whitney Short — PhD student in quantum chemistry and information at the University of Chicago." />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── Home-specific: profile block ── */
     .profile-block {
       display: grid;
-      grid-template-columns: 160px 1fr;
+      grid-template-columns: 180px 1fr;
       gap: 2.5rem;
       align-items: start;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
     .profile-photo {
-      width: 200px; height: 250px;
-      border-radius: 6%;
+      width: 200px;
+      height: 250px;
+      border-radius: 4px;
       object-fit: cover;
-      border: 2px solid rgba(200,164,74,0.3);
-      background: var(--navy);
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
+      border: 1px solid var(--border);
+      display: block;
     }
-    .profile-photo-placeholder {
-      width: 200px; height: 250px;
-      border-radius: 6%;
-      border: 2px solid rgba(200,164,74,0.3);
-      background: var(--navy-mid);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .profile-photo-placeholder span {
-      font-family: var(--font-display);
-      font-size: 3rem;
-      color: var(--gold);
-      font-weight: 300;
-    }
-    .profile-info { padding-top: 0.5rem; }
-    .profile-info h2 {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      margin-bottom: 0.4rem;
-      border: none;
-      padding: 0;
+    .profile-info h1 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.25rem;
     }
     .profile-info .position {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--steel-light);
-      margin-bottom: 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+    .profile-info .institution {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
     }
     .contact-line {
-      display: flex; flex-wrap: wrap; gap: 1rem;
-      margin-top: 1rem;
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
     }
     .contact-line a {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      color: var(--muted);
+      font-size: 0.82rem;
+      color: var(--navy);
       text-decoration: none;
-      display: flex; align-items: center; gap: 0.4rem;
-      transition: color 0.2s;
+      display: flex; align-items: center; gap: 0.35rem;
     }
-    .contact-line a:hover { color: var(--gold-light); }
-    .contact-line svg { width: 14px; height: 14px; }
+    .contact-line a:hover { text-decoration: underline; }
+    .contact-line svg { width: 13px; height: 13px; flex-shrink: 0; }
 
-    /* Interests grid */
-    .interests-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-    .interest-item {
-      background: var(--navy);
-      border: 1px solid rgba(200,164,74,0.1);
-      border-radius: 4px;
-      padding: 0.85rem 1.1rem;
-      display: flex; align-items: center; gap: 0.75rem;
-    }
-    .interest-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--gold); flex-shrink: 0;
-    }
-    .interest-item span {
-      font-size: 0.9rem;
-      color: var(--cream-dim);
-    }
     @media (max-width: 680px) {
       .profile-block {
         grid-template-columns: 1fr;
@@ -107,46 +62,26 @@
 </head>
 <body>
 
-  <!-- ── Navigation ── -->
   <nav>
-    <a class="nav-name" href="index.html">Whitney <span>Short</span></a>
+    <a class="nav-name" href="index.html">Whitney Short</a>
     <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
     <ul>
       <li><a href="index.html" class="active">About</a></li>
-      <li><a href="tutoring.html">Tutoring and College Essays</a></li>
+      <li><a href="tutoring.html">Tutoring & College Essays</a></li>
       <li><a href="cv.html">CV</a></li>
     </ul>
   </nav>
 
-  <!-- ── Hero ── -->
-  <header class="page-hero">
-    <span class="label">Welcome</span>
-    <h1>Hello, I'm Whitney</h1>
-    <div class="hero-rule"></div>
-    <p class="lead">
-      I am a graduate researcher in quantum chemistry and information, 
-      passionate about outreach, teaching, and mentorship.
-    </p>
-  </header>
+  <main style="padding-top: calc(var(--nav-h) + 3rem);">
 
-  <!-- ── Main Content ── -->
-  <main>
-
-    <!-- Profile Block -->
     <div class="profile-block">
       <img src="IMG_8580.JPG" alt="Whitney Short" class="profile-photo">
-    </div>
-        
-      </div>
       <div class="profile-info">
-        <h2>Whitney Short</h2>
-        <p class="position">PhD Student · Department of Chemistry · University of Chicago</p>
-        <p>
-          1st year Ph.D. student studying quantum chemistry and quantum information science in the Mazziotti group. 
-          Advisor: <span style="color:var(--cream);">Prof. David Mazziotti</span>.
-        </p>
+        <h1>Whitney Short</h1>
+        <p class="position">PhD Student, Department of Chemistry</p>
+        <p class="institution">University of Chicago · Mazziotti Group</p>
         <div class="contact-line">
           <a href="mailto:wshort@uchicago.edu">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
@@ -162,32 +97,31 @@
 
     <hr class="section-rule">
 
-    <!-- About / Bio -->
     <section>
-      <h2>About Me</h2>
+      <h2>About</h2>
       <p>
-        I am finishing up my first year of my doctoral program in Chemistry at the University of Chicago. 
+        I am finishing up my first year of my doctoral program in Chemistry at the University of Chicago.
         Alongside my interests in quantum chemistry, I have a passion for mentorship and teaching.
       </p>
       <p>
-        With an undergraduate degree in both Chemistry and English Literature, I have learned the power of an interdisciplinary education firsthand.
-        This synthesis of "disparate" fields of study has equipped me with strong science communication skills, creativity, and a soft spot for factitive verbs.
+        With an undergraduate degree in both Chemistry and English Literature, I have learned the power 
+        of an interdisciplinary education firsthand. This synthesis of "disparate" fields of study has 
+        equipped me with strong science communication skills, creativity, and a soft spot for factitive verbs.
       </p>
       <p>
         My hobbies include going to the movies, vintage shopping, decorating my apartment and interior design,
         caring for my cats and fishkeeping, and pursuit of an iced triple latte.
       </p>
+      <div class="btn-group">
+        <a href="cv.html" class="btn btn-outline">Curriculum Vitae</a>
+      </div>
     </section>
-
-    <div class="btn-group">
-      <a href="cv.html" class="btn btn-outline">Download CV</a>
-    </div>
 
   </main>
 
   <footer>
     <p>© 2026 Whitney Short</p>
-    <p>Built with GitHub Pages · <a href="mailto:wshort@uchicago.edu">Contact</a></p>
+    <p><a href="mailto:wshort@uchicago.edu">wshort@uchicago.edu</a></p>
   </footer>
 
 </body>
