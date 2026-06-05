@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whitney Short — Outreach</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .outreach-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 0.6rem;
+    }
+    .outreach-card .o-meta {
+      font-family: var(--font-mono);
+      font-size: 0.67rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy-light);
+      margin-bottom: 0.3rem;
+    }
+    .outreach-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 0.3rem;
+    }
+    .outreach-card p { font-size: 0.88rem; color: var(--muted); margin: 0; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-name" href="index.html">Whitney Short</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="outreach.html" class="active">Outreach</a></li>
+      <li><a href="tutoring.html">Tutoring &amp; College Essays</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <main style="padding-top: calc(var(--nav-h) + 3rem);">
+
+    <section>
+      <h2>Outreach</h2>
+      <p>
+        One of the most rewarding and exciting experiences of advancing in my education has been the increasing opportunity 
+        to transition from the mentee to the mentor role. My mentors have helped shape my own path, and the ability to give back 
+        by helping to build up the future generation of scientists and citizens is something I value strongly and prioritize.
+      </p>
+    </section>
+
+    <hr class="section-rule">
+
+    <section>
+      <h2>Activities</h2>
+
+     <div class="outreach-card">
+        <div class="o-meta">May 2026–Present · University of Chicago Department of Chemistry</div>
+        <h3>Math Bootcamp Organizer</h3>
+        <p> Each year, the Department of Chemistry facilitates a graduate-student organized Math Bootcamp for incoming
+               Ph.D. students to brush up on the requisite math skills for their graduate level physical chemistry classes. The goal
+               of the program is to put students with potentially less-rigorous or recent math backgrounds on a level playing field and
+               to prep specific techniques and concepts required for the work in their first quarter classes. As a member of the organizing 
+               committee, I am responsible for curriculum development, teacher recruitment, and lesson feedback to session teachers, as 
+               well as financial and organizational duties associated with executing the two-week long course during orientation.   </p>
+        <div class="tags" style="margin-top:0.6rem;">
+          <span class="tag">Graduate</span>
+          <span class="tag">Academic outreach</span>
+        </div>
+      </div>
+
+      <div class="outreach-card">
+        <div class="o-meta">March 2026–Present · University of Chicago Laboratory School</div>
+        <h3>WiSTEM Mentorship Program Mentor</h3>
+        <p>Through this program initiated through a partnership with the Laboratory School's WiSTEM organization and 
+               UChicago's WiC+ (Women in Chemistry +) organization, I am paired with a female high school student 
+               who has strong interest in math and chemistry. I mentor her through biweekly meetings and program-wide events such
+               as panels and mixers. I aim to encourage my mentee to pursue a path in STEM and provide my perspective on my 
+               experiences as a woman in STEM from my time in college and now in my Ph.D. </p>
+        <div class="tags" style="margin-top:0.6rem;">
+          <span class="tag">9-12</span>
+          <span class="tag">Mentorship</span>
+        </div>
+      </div>
+      
+      <div class="outreach-card">
+        <div class="o-meta">February 2026–Present · Wendell Phillips Academy High School</div>
+        <h3>Geometry and Trigonometry &amp; Algebra II Tutor</h3>
+        <p> I tutor math weekly at Wendell Phillips Academy High School during class time. The goal of this program is to help students
+               with their math during their lesson time, while they are doing the problems in school. Most students at this high school face
+               food, housing, and other instabilities outside of school; this program is designed to meet them in the classroom to build up
+               their basic math and reasoning skills to allow them to build new knowledge and complete their work independently rather than
+               being in a perpetual catch-up phase. </p>
+        <div class="tags" style="margin-top:0.6rem;">
+          <span class="tag">9-12</span>
+          <span class="tag">Tutoring</span>
+        </div>
+      </div>
+      
+      <div class="outreach-card">
+        <div class="o-meta">November 2025–Present · Physical Sciences Division Pen Pals Program</div>
+        <h3>STEM Student Pen Pal</h3>
+        <p> Throughout the past academic year, I have corresponded with a fifth grade student at St. Thomas the Apostle Catholic
+               school. Within my letters, I have talked about what it is like to be a scientist, what made me excited about chemistry when 
+               I was earlier in my education, and some obstacles I've faced along my path. My pen pal has written about her career 
+               interests and hobbies and her favorite things to learn in school; a primary goal of the program is to connect our pen pal's 
+               interests with how they might be able to pursue them via a STEM education and get them excited about science. </p>
+        <div class="tags" style="margin-top:0.6rem;">
+          <span class="tag">K-8</span>
+          <span class="tag">Mentorship</span>
+        </div>
+      </div>
+
+      <div class="outreach-card">
+        <div class="o-meta">October 2025 · South Side Science Festival</div>
+        <h3>Scientist Volunteer</h3>
+        <p>This yearly event organizes dozens of science demos targeted at kids of all ages to show them science and research
+               in a fun and exciting format. My role involved helping set up the event day-of and facilitate demos and attractions within
+               the festival. </p>
+        <div class="tags" style="margin-top:0.6rem;">
+          <span class="tag">Public Event</span>
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="section-rule">
+
+  </main>
+
+  <footer>
+    <p>© 2026 Whitney Short</p>
+    <p><a href="mailto:wshort@uchicago.edu">wshort@uchicago.edu</a></p>
+  </footer>
+
+</body>
+</html>
